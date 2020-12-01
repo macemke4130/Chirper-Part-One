@@ -24,7 +24,7 @@ class App extends Component {
           message: "Did Brandon just say he needs a sno-mobile?"
         }
       ],
-      chirpCount: 3
+      chirpCount: 3 // I do not know how to make this dynamic. Help? --
     }; 
   }
 
@@ -35,7 +35,7 @@ class App extends Component {
   addChirp = () => {
     let newChirp = {
       key: this.state.chirpCount,
-      user: "Random User #" + Math.floor(Math.random() * 1000),
+      user: "Random User #" + Math.floor(Math.random() * 666),
       message: this.state.placeholder
     }
 
@@ -43,22 +43,20 @@ class App extends Component {
       chirps: [...this.state.chirps, newChirp]
     });
     this.setState({
-      chirpCount: this.state.chirpCount + 1
+      // Logic for incrementing the Key property inside of the chirps[] State array --
+      chirpCount: this.state.chirpCount + 1 // The ++ shorthand did not work, but this did. Help? --
     });
+
+    // How could I clear the form input value on this event? --
 
   }
 
   render() {
     return (
       <>
-        <nav>
-          Home - Chirp - Account
-        </nav>
         <div className="row">
           <div className="col-12">
-
             <Feed feed={this.state.chirps}></Feed>
-
           </div>
         </div>
         <div className="col-12">
